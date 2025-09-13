@@ -1,6 +1,13 @@
-<!-- Gravity Binary layout v18 | 2025-09-13 14:56:13 -->
+<!-- Gravity Binary layout v26 | 2025-09-13 15:11:34 -->
 
 <style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
   .hero {
     background-color: #0078d4;
     color: #fff;
@@ -9,15 +16,7 @@
     border-radius: 8px;
     margin-bottom: 30px;
   }
-  .hero h1 {
-    font-size: 36px;
-    margin: 0;
-  }
-  .hero p {
-    font-size: 18px;
-    margin-top: 10px;
-    font-weight: 300;
-  }
+
   .logo {
     display: block;
     margin: 20px auto;
@@ -32,10 +31,107 @@
     color: #0078d4;
     text-align: center;
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .capsule {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: 6px solid #4183c4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 16px;
+    border-radius: 6px;
+  }
+
+  .capsule h3 { margin-top: 0; font-size: 18px; color: #333; }
+  .capsule p { margin: 6px 0; font-size: 14px; color: #555; }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 8px;
+  }
+
+  .tier1 { background-color: #e0e0e0; color: #333; }
+  .tier2 { background-color: #0078d4; color: #fff; }
+  .tier3 { background-color: #d4af37; color: #fff; }
+
+  .search {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .search input {
+    padding: 8px;
+    width: 60%;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+  }
+
+  footer a {
+    color: #0078d4;
+    text-decoration: none;
+    margin: 0 8px;
+  }
 </style>
 <div class='hero'>
   <div class='logo'>GB</div>
   <h1>Gravity Binary</h1>
   <p>Modular Trust Engines · Symbolic Execution · Recruiter-Facing Proof</p>
 </div>
-<!-- Trigger rebuild: Gravity Binary layout v18 | 2025-09-13 14:56:13 -->
+<div class='search'>
+  <input type='text' id='searchInput' placeholder='Search capsules by name...' onkeyup='filterCapsules()'>
+</div>
+<div class='grid' id='capsuleGrid'>
+<div class='capsule'>
+  <h3>AI Insurance Agent Validator</h3>
+  <p>Language: Python</p>
+  <p>Trust Score: 91</p>
+  <p>Badge Tier: <span class='badge tier2'>Tier 2 🛡️</span></p>
+  <p>Last Sync: 2025-09-13 15:11:34</p>
+</div>
+<div class='capsule'>
+  <h3>Make the World Better Validator</h3>
+  <p>Language: PowerShell</p>
+  <p>Trust Score: 88</p>
+  <p>Badge Tier: <span class='badge tier2'>Tier 2 🛡️</span></p>
+  <p>Last Sync: 2025-09-13 15:11:34</p>
+</div>
+<div class='capsule'>
+  <h3>UCE Engine Validator</h3>
+  <p>Language: Go</p>
+  <p>Trust Score: 97</p>
+  <p>Badge Tier: <span class='badge tier3'>Tier 3 🔒 tier2 Tier 2 🛡️</span></p>
+  <p>Last Sync: 2025-09-13 15:11:34</p>
+</div>
+</div>
+<script>
+function filterCapsules() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const capsules = document.querySelectorAll('.capsule');
+  capsules.forEach(c => {
+    const name = c.querySelector('h3').textContent.toLowerCase();
+    c.style.display = name.includes(input) ? '' : 'none';
+  });
+}
+</script>
+<footer>
+  <p>© 2025 Gravity Binary · <a href='https://github.com/FlashMS/gravity-binary-site'>GitHub</a> · <a href='mailto:contact@gravitybinary.com'>Contact</a></p>
+</footer>
+
+<!-- Trigger rebuild: Gravity Binary layout v26 | 2025-09-13 15:11:34 -->
