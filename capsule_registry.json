@@ -1,27 +1,23 @@
 [
   {
-    "trust_score": 78,
-    "language": "Bash",
-    "name": "Validator Bash Tier 1"
-  },
-  {
-    "trust_score": 92,
+    "name": "AI Insurance Agent Validator",
     "language": "Python",
-    "name": "Validator Python Tier 2"
+    "trust_score": 91,
+    "tier": "Tier 2 🛡️"
   },
   {
-    "trust_score": 98,
-    "language": "Go",
-    "name": "Validator Go Tier 3"
-  },
-  {
-    "trust_score": 89,
+    "name": "Make the World Better Validator",
     "language": "PowerShell",
-    "name": "Validator PowerShell Tier 2"
+    "trust_score": 88,
+    "tier": "Tier 2 🛡️"
   },
   {
-    "trust_score": 96,
-    "language": "C#",
-    "name": "Validator C# Tier 3"
+    "name": "UCE Engine Validator",
+    "language": "Go",
+    "trust_score": 97,
+    "tier": [
+      "Tier 3 🔒",
+      "Tier 2 🛡️"
+    ]
   }
 ]
