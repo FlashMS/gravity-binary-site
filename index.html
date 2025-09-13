@@ -1,8 +1,8 @@
-<!-- Gravity Binary layout v36 | 2025-09-13 15:32:44 -->
+<!-- Gravity Binary layout v40 | 2025-09-13 15:43:37 -->
 
 <style>
   body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9; }
-  .hero, .logo, .logo-text, .subtext, .grid, .capsule, .capsule h3, .capsule p, .badge, .tier1, .tier2, .tier3, .export, .export a, footer, footer a {
+  .hero, .logo, .logo-text, .subtext, .grid, .capsule, .capsule h3, .capsule p, .badge, .tier1, .tier2, .tier3, .sync, .summary, .heatmap, .modal, .overlay, footer, footer a {
     all: unset;
   }
   .hero { background-color: #0078d4; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
@@ -10,16 +10,16 @@
   .logo-text { font-size: 16px; font-weight: bold; color: #0078d4; line-height: 1.2; }
   .subtext { font-size: 12px; font-weight: 400; color: #555; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-  .capsule { background-color: #fff; border: 1px solid #ddd; border-left: 6px solid #4183c4; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 16px; border-radius: 6px; }
+  .capsule { background-color: #fff; border: 1px solid #ddd; border-left: 6px solid #4183c4; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 16px; border-radius: 6px; cursor: pointer; }
   .capsule h3 { margin-top: 0; font-size: 18px; color: #333; }
   .capsule p { margin: 6px 0; font-size: 14px; color: #555; }
   .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 12px; margin-left: 8px; }
   .tier1 { background-color: #e0e0e0; color: #333; }
   .tier2 { background-color: #0078d4; color: #fff; }
   .tier3 { background-color: #d4af37; color: #fff; }
-  .legend, .filter, .summary { margin: 30px 0; text-align: center; }
-  .filter button { margin: 0 6px; padding: 6px 12px; border: none; border-radius: 4px; background-color: #0078d4; color: #fff; cursor: pointer; }
-  .filter button:hover { background-color: #005fa3; }
+  .sync, .summary, .heatmap { margin: 20px 0; text-align: center; font-size: 13px; color: #777; }
+  .modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; width: 300px; }
+  .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; }
   footer { margin-top: 40px; text-align: center; font-size: 13px; color: #777; }
   footer a { color: #0078d4; text-decoration: none; margin: 0 8px; }
 </style>
@@ -30,30 +30,23 @@
   <h1>Modular Trust Engines</h1>
   <p>Symbolic Execution · Recruiter-Facing Proof · Capsule Validation</p>
 </div>
-<div class='legend'>
-  <p><strong>Badge Legend:</strong></p>
-  <p><span class='badge tier1'>Tier 1 ⚙️</span> Basic validator · <span class='badge tier2'>Tier 2 🛡️</span> Trusted validator · <span class='badge tier3'>Tier 3 🔒</span> Enterprise-grade validator</p>
-</div>
-<div class='filter'>
-  <button onclick="filterTier('tier1')">Tier 1</button>
-  <button onclick="filterTier('tier2')">Tier 2</button>
-  <button onclick="filterTier('tier3')">Tier 3</button>
-  <button onclick="filterTier('all')">Show All</button>
+<div class='sync'>
+  <p>🔁 Last Homepage Sync: <span id='syncTime'>2025-09-13 15:43:37</span></p>
 </div>
 <div class='grid'>
-<div class='capsule tier2'>
+<div class='capsule tier2' onclick="showModal('AI Insurance Agent Validator', 'Python', '91', 'Tier 2 🛡️')">
   <h3>AI Insurance Agent Validator</h3>
   <p>Language: Python</p>
   <p>Trust Score: 91</p>
   <p>Badge Tier: <span class='badge tier2'>Tier 2 🛡️</span></p>
 </div>
-<div class='capsule tier2'>
+<div class='capsule tier2' onclick="showModal('Make the World Better Validator', 'PowerShell', '88', 'Tier 2 🛡️')">
   <h3>Make the World Better Validator</h3>
   <p>Language: PowerShell</p>
   <p>Trust Score: 88</p>
   <p>Badge Tier: <span class='badge tier2'>Tier 2 🛡️</span></p>
 </div>
-<div class='capsule tier3'>
+<div class='capsule tier3' onclick="showModal('UCE Engine Validator', 'Go', '97', 'Tier 3 🔒 tier2 Tier 2 🛡️')">
   <h3>UCE Engine Validator</h3>
   <p>Language: Go</p>
   <p>Trust Score: 97</p>
@@ -62,22 +55,44 @@
 </div>
 <div class='summary'>
   <p><strong>Trust Index Summary:</strong></p>
-  <p>Average Trust Score: 92 · Total Validators: 3</p>
+  <p>Average Score: 92 · Total Validators: 3</p>
+</div>
+<div class='heatmap'>
+  <p><strong>Trust Score Heatmap:</strong></p>
+  <p>Tier 1: 0 · Tier 2: 3 · Tier 3: 1</p>
+</div>
+<div class='overlay' id='overlay' onclick='hideModal()'></div>
+<div class='modal' id='modal'>
+  <h3 id='modalName'></h3>
+  <p id='modalLang'></p>
+  <p id='modalScore'></p>
+  <p id='modalTier'></p>
 </div>
 <script>
-function filterTier(tier) {
-  const capsules = document.querySelectorAll('.capsule');
-  capsules.forEach(c => {
-    if (tier === 'all') {
-      c.style.display = '';
-    } else {
-      c.style.display = c.classList.contains(tier) ? '' : 'none';
-    }
-  });
+function showModal(name, lang, score, tier) {
+  document.getElementById('modalName').textContent = name;
+  document.getElementById('modalLang').textContent = 'Language: ' + lang;
+  document.getElementById('modalScore').textContent = 'Trust Score: ' + score;
+  document.getElementById('modalTier').textContent = 'Badge Tier: ' + tier;
+  document.getElementById('modal').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
 }
+function hideModal() {
+  document.getElementById('modal').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+}
+setInterval(() => {
+  const now = new Date();
+  const formatted = now.toISOString().slice(0,19).replace('T',' ');
+  document.getElementById('syncTime').textContent = formatted;
+}, 60000);
 </script>
+<footer>
+  <p>© 2025 Gravity Binary · <a href='https://github.com/FlashMS/gravity-binary-site'>GitHub</a> · <a href='mailto:contact@gravitybinary.com
+
+Add-Content C:\Users\tokab\Documents\GravityBinary\gravity-binary-site\index.html @"
 <footer>
   <p>© 2025 Gravity Binary · <a href='https://github.com/FlashMS/gravity-binary-site'>GitHub</a> · <a href='mailto:contact@gravitybinary.com'>Contact</a></p>
 </footer>
 
-<!-- Trigger rebuild: Gravity Binary layout v36 | 2025-09-13 15:32:44 -->
+<!-- Trigger rebuild: Gravity Binary layout v40 | 2025-09-13 15:43:37 -->
