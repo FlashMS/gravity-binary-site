@@ -1,8 +1,8 @@
-<!-- Gravity Binary layout v40 | 2025-09-13 15:43:37 -->
+<!-- Gravity Binary layout v43 | 2025-09-13 16:49:05 -->
 
 <style>
   body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9; }
-  .hero, .logo, .logo-text, .subtext, .grid, .capsule, .capsule h3, .capsule p, .badge, .tier1, .tier2, .tier3, .sync, .summary, .heatmap, .modal, .overlay, footer, footer a {
+  .hero, .logo, .logo-text, .subtext, .grid, .capsule, .capsule h3, .capsule p, .badge, .tier1, .tier2, .tier3, .sync, .summary, .heatmap, .modal, .overlay, .export, footer, footer a {
     all: unset;
   }
   .hero { background-color: #0078d4; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
@@ -17,7 +17,7 @@
   .tier1 { background-color: #e0e0e0; color: #333; }
   .tier2 { background-color: #0078d4; color: #fff; }
   .tier3 { background-color: #d4af37; color: #fff; }
-  .sync, .summary, .heatmap { margin: 20px 0; text-align: center; font-size: 13px; color: #777; }
+  .sync, .summary, .heatmap, .export { margin: 20px 0; text-align: center; font-size: 13px; color: #777; }
   .modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; width: 300px; }
   .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; }
   footer { margin-top: 40px; text-align: center; font-size: 13px; color: #777; }
@@ -31,22 +31,22 @@
   <p>Symbolic Execution · Recruiter-Facing Proof · Capsule Validation</p>
 </div>
 <div class='sync'>
-  <p>🔁 Last Homepage Sync: <span id='syncTime'>2025-09-13 15:43:37</span></p>
+  <p>🔁 Last Homepage Sync: <span id='syncTime'>2025-09-13 16:49:05</span></p>
 </div>
 <div class='grid'>
-<div class='capsule tier2' onclick="showModal('AI Insurance Agent Validator', 'Python', '91', 'Tier 2 🛡️')">
+<div class='capsule tier2' onclick="showModal('AI Insurance Agent Validator', 'Python', '91', 'Tier 2 🛡️', '2025-09-13 16:48:05|2025-09-13 16:47:05|2025-09-13 16:46:05|2025-09-13 16:45:05|2025-09-13 16:44:05')">
   <h3>AI Insurance Agent Validator</h3>
   <p>Language: Python</p>
   <p>Trust Score: 91</p>
   <p>Badge Tier: <span class='badge tier2'>Tier 2 🛡️</span></p>
 </div>
-<div class='capsule tier2' onclick="showModal('Make the World Better Validator', 'PowerShell', '88', 'Tier 2 🛡️')">
+<div class='capsule tier2' onclick="showModal('Make the World Better Validator', 'PowerShell', '88', 'Tier 2 🛡️', '2025-09-13 16:48:05|2025-09-13 16:47:05|2025-09-13 16:46:05|2025-09-13 16:45:05|2025-09-13 16:44:05')">
   <h3>Make the World Better Validator</h3>
   <p>Language: PowerShell</p>
   <p>Trust Score: 88</p>
   <p>Badge Tier: <span class='badge tier2'>Tier 2 🛡️</span></p>
 </div>
-<div class='capsule tier3' onclick="showModal('UCE Engine Validator', 'Go', '97', 'Tier 3 🔒 tier2 Tier 2 🛡️')">
+<div class='capsule tier3' onclick="showModal('UCE Engine Validator', 'Go', '97', 'Tier 3 🔒 tier2 Tier 2 🛡️', '2025-09-13 16:48:05|2025-09-13 16:47:05|2025-09-13 16:46:05|2025-09-13 16:45:05|2025-09-13 16:44:05')">
   <h3>UCE Engine Validator</h3>
   <p>Language: Go</p>
   <p>Trust Score: 97</p>
@@ -61,19 +61,31 @@
   <p><strong>Trust Score Heatmap:</strong></p>
   <p>Tier 1: 0 · Tier 2: 3 · Tier 3: 1</p>
 </div>
+<div class='export'>
+  <p>📄 Recruiter Export Available</p>
+  <p><a href='capsule_export.txt'>Download Capsule Matrix</a></p>
+</div>
 <div class='overlay' id='overlay' onclick='hideModal()'></div>
 <div class='modal' id='modal'>
   <h3 id='modalName'></h3>
   <p id='modalLang'></p>
   <p id='modalScore'></p>
   <p id='modalTier'></p>
+  <p id='modalSyncs'></p>
 </div>
 <script>
-function showModal(name, lang, score, tier) {
+function showModal(name, lang, score, tier, syncs) {
+  document.getElementById('modalName').textContent = name;
+  document.getElementById('modalLang').text
+
+Add-Content C:\Users\tokab\Documents\GravityBinary\gravity-binary-site\index.html @"
+<script>
+function showModal(name, lang, score, tier, syncs) {
   document.getElementById('modalName').textContent = name;
   document.getElementById('modalLang').textContent = 'Language: ' + lang;
   document.getElementById('modalScore').textContent = 'Trust Score: ' + score;
   document.getElementById('modalTier').textContent = 'Badge Tier: ' + tier;
+  document.getElementById('modalSyncs').textContent = 'Sync History: ' + syncs.split('|').join(', ');
   document.getElementById('modal').style.display = 'block';
   document.getElementById('overlay').style.display = 'block';
 }
@@ -87,12 +99,5 @@ setInterval(() => {
   document.getElementById('syncTime').textContent = formatted;
 }, 60000);
 </script>
-<footer>
-  <p>© 2025 Gravity Binary · <a href='https://github.com/FlashMS/gravity-binary-site'>GitHub</a> · <a href='mailto:contact@gravitybinary.com
 
-Add-Content C:\Users\tokab\Documents\GravityBinary\gravity-binary-site\index.html @"
-<footer>
-  <p>© 2025 Gravity Binary · <a href='https://github.com/FlashMS/gravity-binary-site'>GitHub</a> · <a href='mailto:contact@gravitybinary.com'>Contact</a></p>
-</footer>
-
-<!-- Trigger rebuild: Gravity Binary layout v40 | 2025-09-13 15:43:37 -->
+<!-- Force rebuild: layout v46 | 2025-09-13 16:49:31 -->
