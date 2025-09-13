@@ -1,0 +1,29 @@
+Gravity Binary Recruiter Summary
+Generated: 2025-09-13 14:39:57
+
+
+Name: Validator Bash Tier 1
+Language: Bash
+Trust Score: 78
+Badge Tier: Tier 1 ⚙️
+---
+Name: Validator Python Tier 2
+Language: Python
+Trust Score: 92
+Badge Tier: Tier 2 🛡️
+---
+Name: Validator Go Tier 3
+Language: Go
+Trust Score: 98
+Badge Tier: Tier 3 🔒 Tier 2 🛡️
+---
+Name: Validator PowerShell Tier 2
+Language: PowerShell
+Trust Score: 89
+Badge Tier: Tier 2 🛡️
+---
+Name: Validator C# Tier 3
+Language: C#
+Trust Score: 96
+Badge Tier: Tier 3 🔒 Tier 2 🛡️
+---
