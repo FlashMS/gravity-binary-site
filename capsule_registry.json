@@ -1,0 +1,17 @@
+[
+  {
+    "trust_score": 78,
+    "language": "Bash",
+    "name": "Validator Bash Tier 1"
+  },
+  {
+    "trust_score": 92,
+    "language": "Python",
+    "name": "Validator Python Tier 2"
+  },
+  {
+    "trust_score": 98,
+    "language": "Go",
+    "name": "Validator Go Tier 3"
+  }
+]
