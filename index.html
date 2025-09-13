@@ -1,88 +1,23 @@
-<!-- Gravity Binary layout v30 | 2025-09-13 15:19:22 -->
+<!-- Gravity Binary layout v33 | 2025-09-13 15:29:00 -->
 
 <style>
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-
-  .hero {
-    background-color: #0078d4;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 30px;
-  }
-
-  .logo {
-    display: block;
-    margin: 20px auto;
-    width: 180px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.2);
-    text-align: center;
-    padding: 12px;
-  }
-
-  .logo-text {
-    font-size: 16px;
-    font-weight: bold;
-    color: #0078d4;
-    line-height: 1.2;
-  }
-
-  .subtext {
-    font-size: 12px;
-    font-weight: 400;
-    color: #555;
-  }
-
-  .dashboard {
-    margin: 30px 0;
-    overflow-x: auto;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-  }
-
-  th, td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
-
-  th {
-    background-color: #0078d4;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .svg-badge {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    margin-right: 6px;
-  }
-
-  footer {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 13px;
-    color: #777;
-  }
-
-  footer a {
-    color: #0078d4;
-    text-decoration: none;
-    margin: 0 8px;
-  }
+  body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9; }
+  .hero { background-color: #0078d4; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
+  .logo { display: block; margin: 20px auto; width: 180px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.2); text-align: center; padding: 12px; }
+  .logo-text { font-size: 16px; font-weight: bold; color: #0078d4; line-height: 1.2; }
+  .subtext { font-size: 12px; font-weight: 400; color: #555; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .capsule { background-color: #fff; border: 1px solid #ddd; border-left: 6px solid #4183c4; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 16px; border-radius: 6px; }
+  .capsule h3 { margin-top: 0; font-size: 18px; color: #333; }
+  .capsule p { margin: 6px 0; font-size: 14px; color: #555; }
+  .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 12px; margin-left: 8px; }
+  .tier1 { background-color: #e0e0e0; color: #333; }
+  .tier2 { background-color: #0078d4; color: #fff; }
+  .tier3 { background-color: #d4af37; color: #fff; }
+  .export { margin: 30px 0; text-align: center; }
+  .export a { color: #0078d4; font-weight: bold; text-decoration: none; }
+  footer { margin-top: 40px; text-align: center; font-size: 13px; color: #777; }
+  footer a { color: #0078d4; text-decoration: none; margin: 0 8px; }
 </style>
 <div class='hero'>
   <div class='logo'>
@@ -91,45 +26,35 @@
   <h1>Modular Trust Engines</h1>
   <p>Symbolic Execution · Recruiter-Facing Proof · Capsule Validation</p>
 </div>
-<div class='dashboard'><table id='validatorTable'><thead><tr><th onclick='sortTable(0)'>Name</th><th>Language</th><th>Trust Score</th><th>Badge</th><th>Last Sync</th></tr></thead><tbody>
-<tr>
-  <td>AI Insurance Agent Validator</td>
-  <td>Python</td>
-  <td>91</td>
-  <td><svg class='svg-badge' fill='#0078d4'><rect x='4' y='4' width='8' height='8'/></svg></td>
-  <td>2025-09-13 15:19:22</td>
-</tr>
-<tr>
-  <td>Make the World Better Validator</td>
-  <td>PowerShell</td>
-  <td>88</td>
-  <td><svg class='svg-badge' fill='#0078d4'><rect x='4' y='4' width='8' height='8'/></svg></td>
-  <td>2025-09-13 15:19:22</td>
-</tr>
-<tr>
-  <td>UCE Engine Validator</td>
-  <td>Go</td>
-  <td>97</td>
-  <td><svg class='svg-badge' fill='#d4af37'><circle cx='8' cy='8' r='6'/></svg> <svg class='svg-badge' fill='#0078d4'><rect x='4' y='4' width='8' height='8'/></svg></td>
-  <td>2025-09-13 15:19:22</td>
-</tr>
-</tbody></table></div>
-<script>
-function sortTable(n) {
-  const table = document.getElementById('validatorTable');
-  let rows = Array.from(table.rows).slice(1);
-  let asc = table.getAttribute('data-sort') !== 'asc';
-  rows.sort((a, b) => {
-    let x = a.cells[n].textContent.trim().toLowerCase();
-    let y = b.cells[n].textContent.trim().toLowerCase();
-    return asc ? x.localeCompare(y) : y.localeCompare(x);
-  });
-  rows.forEach(row => table.tBodies[0].appendChild(row));
-  table.setAttribute('data-sort', asc ? 'asc' : 'desc');
-}
-</script>
+<div class='grid'>
+<div class='capsule'>
+  <h3>AI Insurance Agent Validator</h3>
+  <p>Language: Python</p>
+  <p>Trust Score: 91</p>
+  <p>Badge Tier: <span class='badge tier2'>Tier 2 🛡️</span></p>
+  <p>Last Sync: 2025-09-13 15:29:01</p>
+</div>
+<div class='capsule'>
+  <h3>Make the World Better Validator</h3>
+  <p>Language: PowerShell</p>
+  <p>Trust Score: 88</p>
+  <p>Badge Tier: <span class='badge tier2'>Tier 2 🛡️</span></p>
+  <p>Last Sync: 2025-09-13 15:29:01</p>
+</div>
+<div class='capsule'>
+  <h3>UCE Engine Validator</h3>
+  <p>Language: Go</p>
+  <p>Trust Score: 97</p>
+  <p>Badge Tier: <span class='badge tier3'>Tier 3 🔒 tier2 Tier 2 🛡️</span></p>
+  <p>Last Sync: 2025-09-13 15:29:01</p>
+</div>
+</div>
+<div class='export'>
+  <p>📄 Capsule Export Available</p>
+  <p><a href='capsule_export.txt'>Download Capsule Matrix</a></p>
+</div>
 <footer>
   <p>© 2025 Gravity Binary · <a href='https://github.com/FlashMS/gravity-binary-site'>GitHub</a> · <a href='mailto:contact@gravitybinary.com'>Contact</a></p>
 </footer>
 
-<!-- Trigger rebuild: Gravity Binary layout v30 | 2025-09-13 15:19:22 -->
+<!-- Trigger rebuild: Gravity Binary layout v33 | 2025-09-13 15:29:01 -->
