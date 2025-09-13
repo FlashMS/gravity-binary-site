@@ -41,3 +41,53 @@
 </div>
 
 <!-- Trigger rebuild: Gravity Binary layout v14 | 2025-09-13 14:44:06 -->
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .capsule {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: 6px solid #4183c4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+  }
+
+  .capsule:hover {
+    transform: scale(1.02);
+  }
+
+  .capsule h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+  }
+
+  .capsule p {
+    margin: 6px 0;
+    color: #555;
+  }
+
+  .capsule a {
+    color: #4183c4;
+    text-decoration: none;
+  }
+
+  .capsule a:hover {
+    text-decoration: underline;
+  }
+
+  /* Tier color coding */
+  .capsule:has(p:contains('Tier 1')) { border-left-color: #999; }
+  .capsule:has(p:contains('Tier 2')) { border-left-color: #0078d4; }
+  .capsule:has(p:contains('Tier 3')) { border-left-color: #d4af37; }
+</style>
+
+<!-- Trigger rebuild: Gravity Binary layout v15 | 2025-09-13 14:49:27 -->
