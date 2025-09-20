@@ -1,0 +1,23 @@
+[
+  {
+    "name": "AI Insurance Agent Validator",
+    "language": "Python",
+    "trust_score": 91,
+    "tier": "Tier 2 🛡️"
+  },
+  {
+    "name": "Make the World Better Validator",
+    "language": "PowerShell",
+    "trust_score": 88,
+    "tier": "Tier 2 🛡️"
+  },
+  {
+    "name": "UCE Engine Validator",
+    "language": "Go",
+    "trust_score": 97,
+    "tier": [
+      "Tier 3 🔒",
+      "Tier 2 🛡️"
+    ]
+  }
+]
