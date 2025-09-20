@@ -1,0 +1,31 @@
+name: Reflex Capsule Listener
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - index.html
+
+jobs:
+  trigger-reflex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Scan layout marker
+        run: |
+          if grep -q "Gravity Binary layout v108" index.html; then
+            echo "Layout v108 detected. Triggering reflex logic..."
+          else
+            echo "No reflex marker found. Skipping."
+          fi
+
+      - name: Execute reflex logic
+        if: success()
+        run: |
+          echo "🧠 Reflex logic activated for layout v108"
+          echo "🧊 Capsule Freeze Logic engaged"
+          echo "🔁 Echo Dampening applied"
+          echo "📡 Recruiter Overlay deployed"

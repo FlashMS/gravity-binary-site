@@ -1,0 +1,8 @@
+{
+  "name": "EchoProbe-Δ3",
+  "tier": "Tier 1",
+  "fingerprint": "Δ3",
+  "echo_logic": "Detects recursive saturation and triggers layout rebound",
+  "author": "external-contributor",
+  "submitted": "2025-09-19 23:56:24 EDT"
+}

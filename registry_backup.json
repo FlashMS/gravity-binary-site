@@ -1,0 +1,14 @@
+{
+  "capsules": [
+    {
+      "capsule_id": "gravity-core",
+      "language": "Python",
+      "trust_level": "high"
+    },
+    {
+      "capsule_id": "gravity-deploy",
+      "language": "Bash",
+      "trust_level": "medium"
+    }
+  ]
+}
