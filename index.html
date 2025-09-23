@@ -1,144 +1,76 @@
 <!DOCTYPE html>
->> <html lang="en">
->> <head>
->>   <meta charset="UTF-8">
->>   <meta name="capsule-id" content="HomepageRewrite">
->>   <meta name="validator" content="TrustGrid">
->>   <meta name="trust-score" content="92">
->>   <meta name="viewport" content="width=device-width, initial-scale=1.0">
->>   <title>Gravity Binary</title>
->>   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
->>   <style>
->>     html {
->>       font-size: 18px;
->>     }
->>     body {
->>       margin: 0;
->>       font-family: 'Inter', 'Segoe UI', sans-serif;
->>       background: #F5F7FA;
->>       color: #1A1A1A;
->>       line-height: 1.6;
->>       -webkit-text-size-adjust: 100%;
->>       text-size-adjust: 100%;
->>     }
->>     h1, h2, h3, p, nav a {
->>       font-size: inherit !important;
->>       font-weight: 600;
->>       margin-bottom: 0.5em;
->>     }
->>     header {
->>       text-align: center;
->>       padding: 100px 20px 60px;
->>       position: relative;
->>     }
->>     nav ul {
->>       display: flex;
->>       justify-content: center;
->>       list-style: none;
->>       padding: 0;
->>       margin: 0 0 40px 0;
->>     }
->>     nav li {
->>       margin: 0 20px;
->>     }
->>     nav a {
->>       text-decoration: none;
->>       color: #0052CC;
->>     }
->>     section.capsule {
->>       margin: 20px auto;
->>       padding: 24px;
->>       max-width: 800px;
->>       background: #FFFFFF;
->>       border: 1px solid #E0E0E0;
->>       border-radius: 8px;
->>       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
->>     }
->>     footer {
->>       text-align: center;
->>       padding: 40px;
->>       font-size: 24px;
->>       color: #888888;
->>     }
->>     table {
->>       width: 100%;
->>       border-collapse: collapse;
->>       margin-top: 40px;
->>     }
->>     th, td {
->>       border: 1px solid #E0E0E0;
->>       padding: 12px;
->>       text-align: left;
->>     }
->>     th {
->>       background-color: #F0F0F0;
->>     }
-h1, h2, h3, p, nav, section, footer {
-  display: block;
-  margin: 16px 0;
-}
-
->>   </style>
->> </head>
->> <body>
->>   <header>
->>     <div style="position: relative; display: inline-block;">
->>       <svg viewBox="0 0 200 100" width="200" height="100" style="position: absolute; top: -100px; left: 50%; transform: translateX(-50%); z-index: 0;">
->>         <g>
->>           <script type="application/ecmascript"><![CDATA[
->>             const svgNS = "http://www.w3.org/2000/svg";
->>             const group = document.currentScript.parentNode;
->>             for (let i = 0; i < 60; i++) {
->>               const angle = Math.random() * 180;
->>               const length = 30 + Math.random() * 50;
->>               const x2 = 100 + length * Math.cos(angle * Math.PI / 180);
->>               const y2 = 100 - length * Math.sin(angle * Math.PI / 180);
->>               const line = document.createElementNS(svgNS, "line");
->>               line.setAttribute("x1", "100");
->>               line.setAttribute("y1", "100");
->>               line.setAttribute("x2", x2);
->>               line.setAttribute("y2", y2);
->>               line.setAttribute("stroke", `hsl(${Math.random()*360}, 80%, 60%)`);
->>               line.setAttribute("stroke-width", "1.5");
->>               group.appendChild(line);
->>             }
->>           ]]></script>
->>         </g>
->>       </svg>
->>       <div style="position: relative; z-index: 1;">
->>         <h1 style="font-size: 72px !important; margin-bottom: 0;">Gravity Binary</h1>
->>         <h2 style="font-size: 42px !important; margin-top: 8px; color: #555;">Architecture</h2>
->>         <p style="font-size: 20px !important; margin-top: 4px; color: #777;">Modular Trust Engine</p>
->>       </div>
->>     </div>
->>   </header>
->>
->>   <nav>
->>     <ul>
->>       <li><a href="/adminResume">Admin Resume</a></li>
->>       <li><a href="/echoCollapse">Echo Collapse</a></li>
->>       <li><a href="/capsuleDashboard">Capsule Grid</a></li>
->>     </ul>
->>   </nav>
->>
->>   <section class="capsule" data-name="AIWallet" data-score="92">
->>     <h3>AIWallet Capsule</h3>
->>     <p>Validator: TrustGrid | EchoCollapse: Stable</p>
->>   </section>
->>
->>   <section class="capsule" data-name="AdminResume" data-score="88">
->>     <h3>Resume Capsule</h3>
->>     <p>Role: Administrator | Status: Queued</p>
->>   </section>
->>
->>   <section class="capsule" data-name="EchoCollapse" data-score="76">
->>     <h3>Reflex Capsule</h3>
->>     <p>Severity: Critical | Recovery ETA: 19s</p>
->>   </section>
->>
->>   <footer>
->>     &copy; 2025 Gravity Binary. All capsules routed.
->>   </footer>
->> </body>
->> </html>
->> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="capsule-id" content="HomepageRewrite">
+  <meta name="validator" content="TrustGrid">
+  <meta name="trust-score" content="92">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravity Binary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      font-size: 22px;
+    }
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #F5F7FA;
+      color: #1A1A1A;
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 80px !important;
+      line-height: 1.1;
+      margin: 0;
+      color: #0052CC;
+    }
+    h2 {
+      font-size: 48px !important;
+      color: #333333;
+    }
+    h3 {
+      font-size: 32px !important;
+      color: #0052CC;
+      margin-top: 0;
+    }
+    p, nav a {
+      font-size: 24px !important;
+      color: #1A1A1A;
+    }
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+      position: relative;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px 0;
+    }
+    nav li {
+      margin: 0 20px;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section.capsule {
+      margin: 20px auto;
+      padding: 24px;
+      max-width: 800px;
+      background: #FFFFFF;
+      border: 1px solid #E0E0E0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 26px;
+      color
