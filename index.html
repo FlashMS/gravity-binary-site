@@ -69,8 +69,76 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
+    .capsule h3 {
+      margin-top: 0;
+      color: #0052CC;
+    }
     footer {
       text-align: center;
       padding: 40px;
       font-size: 26px;
-      color
+      color: #888888;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+    }
+    th, td {
+      border: 1px solid #E0E0E0;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #F0F0F0;
+    }
+  </style>
+</head>
+<body>
+<header style="text-align: center; padding: 100px 20px 60px; position: relative;">
+  <div style="position: relative; display: inline-block;">
+    <!-- Fireworks-style radial burst -->
+    <svg viewBox="0 0 200 100" width="200" height="100" style="position: absolute; top: -100px; left: 50%; transform: translateX(-50%); z-index: 0;">
+      <g>
+        <!-- 60 randomized rays -->
+        <!-- Script intentionally removed to prevent layout collapse -->
+      </g>
+    </svg>
+
+    <!-- Header text stack -->
+    <div style="position: relative; z-index: 1;">
+      <h1 style="margin-bottom: 0;">Gravity Binary</h1>
+      <h2 style="margin-top: 8px; font-size: 32px; color: #555;">Architecture</h2>
+      <p style="margin-top: 4px; font-size: 20px; color: #777;">Modular Trust Engine</p>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/adminResume">Admin Resume</a></li>
+    <li><a href="/echoCollapse">Echo Collapse</a></li>
+    <li><a href="/capsuleDashboard">Capsule Grid</a></li>
+  </ul>
+</nav>
+
+<section class="capsule" data-name="AIWallet" data-score="92">
+  <h3>AIWallet Capsule</h3>
+  <p>Validator: TrustGrid | EchoCollapse: Stable</p>
+</section>
+
+<section class="capsule" data-name="AdminResume" data-score="88">
+  <h3>Resume Capsule</h3>
+  <p>Role: Administrator | Status: Queued</p>
+</section>
+
+<section class="capsule" data-name="EchoCollapse" data-score="76">
+  <h3>Reflex Capsule</h3>
+  <p>Severity: Critical | Recovery ETA: 19s</p>
+</section>
+
+<footer>
+  &copy; 2025 Gravity Binary. All capsules routed.
+</footer>
+</body>
+</html>
