@@ -73,6 +73,36 @@
       display: flex;
       flex-direction: column;
     }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .validator {
+      background: #e6f0ff;
+      border-left: 6px solid #0052CC;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+    .reflex {
+      background: #fff3f3;
+      border-left: 6px solid #cc0000;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+    .service {
+      background: #f0fff0;
+      border-left: 6px solid #00aa00;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
     footer {
       text-align: center;
       padding: 40px;
@@ -97,29 +127,50 @@
   </ul>
 </nav>
 
-<section class="capsule" data-name="AIWallet" data-score="92">
-  <h3>AIWallet Capsule</h3>
-  <p>Validator: TrustGrid | EchoCollapse: Stable</p>
+<!-- Capsule Grid -->
+<section class="dashboard">
+  <section class="capsule" data-name="AIWallet" data-score="92">
+    <h3>AIWallet Capsule</h3>
+    <p>Validator: TrustGrid | EchoCollapse: Stable</p>
+  </section>
+
+  <section class="capsule" data-name="AdminResume" data-score="88">
+    <h3>Resume Capsule</h3>
+    <p>Role: Administrator | Status: Queued</p>
+  </section>
+
+  <section class="capsule" data-name="EchoCollapse" data-score="76">
+    <h3>Reflex Capsule</h3>
+    <p>Severity: Critical | Recovery ETA: 19s</p>
+  </section>
+
+  <section class="capsule" data-name="AIInsuranceAgent" data-score="94">
+    <h3>AIInsuranceAgent Capsule</h3>
+    <p>Validator: TrustGrid | EchoCollapse: Stable | Status: Live</p>
+  </section>
+
+  <section class="capsule" data-name="Profit Capsule" data-status="Active">
+    <h3>Profit Capsule</h3>
+    <p>Offering: Modular Toolkit | Access: Public | Monetization: Service Grid</p>
+  </section>
 </section>
 
-<section class="capsule" data-name="AdminResume" data-score="88">
-  <h3>Resume Capsule</h3>
-  <p>Role: Administrator | Status: Queued</p>
+<!-- Validator Overlay -->
+<section class="validator">
+  <h3>TrustGrid Validator</h3>
+  <p>All capsules routed through TrustGrid. EchoCollapse status: Stable. Trust score: 92.</p>
 </section>
 
-<section class="capsule" data-name="EchoCollapse" data-score="76">
-  <h3>Reflex Capsule</h3>
-  <p>Severity: Critical | Recovery ETA: 19s</p>
+<!-- Reflex Trigger Capsule -->
+<section class="reflex">
+  <h3>Reflex Trigger Capsule</h3>
+  <p>CI/CD introspection active. Symbolic audit loop detected. Recovery ETA: 19s.</p>
 </section>
 
-<section class="capsule" data-name="AIInsuranceAgent" data-score="94">
-  <h3>AIInsuranceAgent Capsule</h3>
-  <p>Validator: TrustGrid | EchoCollapse: Stable | Status: Live</p>
-</section>
-
-<section class="capsule" data-name="Profit Capsule" data-status="Active">
-  <h3>Profit Capsule</h3>
-  <p>Offering: Modular Toolkit | Access: Public | Monetization: Service Grid</p>
+<!-- Service Grid Capsule -->
+<section class="service">
+  <h3>Service Grid Capsule</h3>
+  <p>Freelance hooks available. Modular toolkit activation pending. Donation badge optional.</p>
 </section>
 
 <footer>
